@@ -3,27 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fiscalia Legal</title>
+  <title>Fiscalia</title>
   <style>
     :root {
       --bg: #f6f6f8;
-      --card: rgba(255, 255, 255, 0.82);
+      --card: rgba(255, 255, 255, 0.84);
       --text: #161618;
       --muted: #6e6e73;
       --line: rgba(0, 0, 0, 0.08);
       --accent: #ff2d55;
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
       --radius: 28px;
-      --max: 860px;
+      --max: 880px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -39,11 +33,7 @@
 
     .wrap {
       width: min(var(--max), calc(100% - 32px));
-      margin: 40px auto 72px;
-    }
-
-    .hero {
-      padding: 24px 4px 22px;
+      margin: 44px auto 72px;
     }
 
     .brand {
@@ -53,7 +43,6 @@
       font-weight: 700;
       font-size: 15px;
       color: var(--muted);
-      letter-spacing: 0.01em;
       margin-bottom: 18px;
     }
 
@@ -66,7 +55,7 @@
     }
 
     h1 {
-      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
       line-height: 0.98;
       letter-spacing: -0.04em;
       margin: 0 0 16px;
@@ -74,7 +63,7 @@
     }
 
     .sub {
-      max-width: 680px;
+      max-width: 700px;
       font-size: 1.08rem;
       color: var(--muted);
       margin: 0;
@@ -83,7 +72,7 @@
     .nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       margin-top: 28px;
     }
 
@@ -92,261 +81,120 @@
       align-items: center;
       text-decoration: none;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.8);
       border: 1px solid rgba(0, 0, 0, 0.06);
-      padding: 11px 16px;
+      padding: 12px 16px;
       border-radius: 999px;
       font-size: 0.96rem;
       font-weight: 600;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
     .pill:hover {
       transform: translateY(-1px);
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
-      background: rgba(255, 255, 255, 0.95);
     }
 
     .card {
+      margin-top: 28px;
       background: var(--card);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.65);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 30px 26px;
-      margin-top: 24px;
     }
 
     @media (min-width: 720px) {
-      .card {
-        padding: 40px 42px;
-      }
+      .card { padding: 40px 42px; }
     }
 
     .section + .section {
-      margin-top: 42px;
-      padding-top: 38px;
+      margin-top: 32px;
+      padding-top: 32px;
       border-top: 1px solid var(--line);
     }
 
     h2 {
-      font-size: 1.7rem;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
+      font-size: 1.6rem;
       margin: 0 0 10px;
-      font-weight: 750;
+      letter-spacing: -0.03em;
     }
 
-    h3 {
-      font-size: 1.05rem;
-      margin: 28px 0 8px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    p {
-      margin: 10px 0 0;
-      color: var(--text);
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    ul {
-      margin: 12px 0 0 0;
-      padding-left: 20px;
-      color: var(--text);
-    }
-
-    li + li {
-      margin-top: 8px;
-    }
+    p { margin: 10px 0 0; }
 
     .meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
       margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.94rem;
     }
 
     .meta span {
+      color: var(--muted);
       background: rgba(0, 0, 0, 0.035);
       border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: 999px;
       padding: 7px 12px;
-    }
-
-    a {
-      color: var(--accent);
+      font-size: 0.94rem;
     }
 
     footer {
-      margin-top: 28px;
-      padding: 8px 6px 0;
+      margin-top: 24px;
       color: var(--muted);
       font-size: 0.94rem;
     }
 
-    .footer-card {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      border-radius: 22px;
-      padding: 18px 20px;
-    }
-
-    .small {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .top-link {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      text-decoration: none;
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      background: rgba(20, 20, 22, 0.9);
-      color: white;
-      font-size: 18px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    }
+    a.inline { color: var(--accent); }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="hero">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <span>Fiscalia</span>
-      </div>
-      <h1>Legal & Privacy</h1>
-      <p class="sub">
-        Fiscalia is designed to keep personal spending data private and simple.
-        This page explains how the app handles your data and the terms that apply
-        when using it.
-      </p>
-      <nav class="nav">
-        <a class="pill" href="#privacy">Privacy Policy</a>
-        <a class="pill" href="#terms">Terms of Use</a>
-      </nav>
-    </header>
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>Fiscalia</span>
+    </div>
+
+    <h1>Legal, Privacy & Support</h1>
+    <p class="sub">
+      Fiscalia is a local-first spending tracker designed to keep personal financial
+      data simple and private. Use the links below to view the privacy policy,
+      terms of use, and support information.
+    </p>
+
+    <nav class="nav">
+      <a class="pill" href="./privacy.html">Privacy Policy</a>
+      <a class="pill" href="./terms.html">Terms of Use</a>
+      <a class="pill" href="./support.html">Support</a>
+    </nav>
 
     <main class="card">
-      <section class="section" id="privacy">
-        <h2>Privacy Policy</h2>
+      <section class="section">
+        <h2>About Fiscalia</h2>
         <div class="meta">
-          <span>Fiscalia</span>
-          <span>Effective date: 30 March 2026</span>
-          <span>Local-only app</span>
+          <span>Local-only</span>
+          <span>No account required</span>
+          <span>No ads or tracking</span>
         </div>
-
-        <h3>Overview</h3>
         <p>
-          Fiscalia is a local-first personal finance app. All spending data you
-          enter into the app is stored locally on your device.
-        </p>
-
-        <h3>What data Fiscalia handles</h3>
-        <p>
-          Fiscalia may store the information you manually enter, such as spending
-          records, categories, budgets, recurring expenses, and related settings.
-        </p>
-
-        <h3>How your data is used</h3>
-        <p>
-          Your data is used only to provide the app’s budgeting and spending-tracking
-          functionality on your device.
-        </p>
-
-        <h3>Data sharing</h3>
-        <ul>
-          <li>No account creation is required.</li>
-          <li>No cloud sync is currently provided.</li>
-          <li>No advertising is shown.</li>
-          <li>No analytics or tracking technologies are used.</li>
-          <li>No personal data is sold or shared with third parties.</li>
-        </ul>
-
-        <h3>Data storage</h3>
-        <p>
-          All data is stored locally on your device. If future versions introduce
-          cloud sync, account features, or remote services, this Privacy Policy
-          will be updated accordingly.
-        </p>
-
-        <h3>Contact</h3>
-        <p>
-          If you have questions about this Privacy Policy, you can contact:
-          <a href="mailto:angzeli0801@gmail.com">angzeli0801@gmail.com</a>
+          Fiscalia helps users record spending, review budgets, and track recurring
+          expenses directly on their device.
         </p>
       </section>
 
-      <section class="section" id="terms">
-        <h2>Terms of Use</h2>
-        <div class="meta">
-          <span>Personal finance tool</span>
-          <span>Provided as-is</span>
-        </div>
-
-        <h3>Use of the app</h3>
-        <p>
-          Fiscalia is provided as a personal spending-tracking and budgeting tool
-          for informational and organisational purposes.
-        </p>
-
-        <h3>No financial advice</h3>
-        <p>
-          Fiscalia does not provide financial, legal, or tax advice. You are
-          responsible for reviewing and interpreting your own financial information.
-        </p>
-
-        <h3>Accuracy and availability</h3>
-        <p>
-          The app is provided on an “as is” basis, without guarantees of uninterrupted
-          availability, complete accuracy, or fitness for a specific purpose.
-        </p>
-
-        <h3>Limitation of liability</h3>
-        <p>
-          To the fullest extent permitted by law, the creator of Fiscalia is not
-          liable for any loss, damage, or decisions made based on the use of the app.
-        </p>
-
-        <h3>Changes</h3>
-        <p>
-          Fiscalia may be updated, modified, or discontinued over time. These terms
-          may also be updated if the app evolves.
-        </p>
-
-        <h3>Contact</h3>
-        <p>
-          For support or questions, contact:
-          <a href="mailto:angzeli0801@gmail.com">angzeli0801@gmail.com</a>
-        </p>
+      <section class="section">
+        <h2>Quick links</h2>
+        <p><a class="inline" href="./privacy.html">View Privacy Policy</a></p>
+        <p><a class="inline" href="./terms.html">View Terms of Use</a></p>
+        <p><a class="inline" href="./support.html">Get Support</a></p>
       </section>
     </main>
 
     <footer>
-      <div class="footer-card">
-        <strong>Fiscalia</strong>
-        <div class="small">Built by Angze “Squiddy” Li</div>
-        <div class="small">Local-first spending tracking for iPhone.</div>
-      </div>
+      Built by Angze “Squiddy” Li
     </footer>
   </div>
-
-  <a href="#" class="top-link" aria-label="Back to top">↑</a>
 </body>
 </html>
