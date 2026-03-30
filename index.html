@@ -25,6 +25,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -42,7 +43,12 @@
       line-height: 1.6;
     }
 
-    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; padding: 40px 0 72px; }
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 72px;
+    }
+
     .hero { padding: 16px 4px 8px; }
 
     .topbar {
@@ -139,6 +145,7 @@
     }
 
     .title-line { display: block; }
+
     .sub {
       margin: 28px 0 0;
       max-width: 760px;
@@ -305,8 +312,12 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.035);
     }
 
-    .footer-title { font-weight: 640; color: var(--text); }
-    .footer-sub { margin-top: 4px; color: var(--muted); }
+    .footer-credit {
+      margin-top: 0;
+      font-size: 1.06rem;
+      font-weight: 560;
+      color: var(--text);
+    }
 
     [data-lang] { display: none !important; }
     html[data-current-lang="en"] [data-lang="en"].inline { display: inline !important; }
@@ -434,9 +445,8 @@
 
     <div class="footer">
       <div class="footer-card">
-        <div class="footer-title">Fiscalia</div>
-        <div class="footer-sub block" data-lang="en">Built by Angze “Squiddy” Li</div>
-        <div class="footer-sub block" data-lang="zh-Hant">由 Angze “Squiddy” Li 製作</div>
+        <div class="footer-credit block" data-lang="en">Built by Angze “Squiddy” Li</div>
+        <div class="footer-credit block" data-lang="zh-Hant">由 Angze “Squiddy” Li 製作</div>
       </div>
     </div>
   </div>
