@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fiscalia Support</title>
-  <link rel="icon" type="image/png" sizes="60x60" href="./favicon.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="./favicon-256.png">
+  <link rel="icon" type="image/png" sizes="60x60" href="./favicon.png?v=1">
+  <link rel="icon" type="image/png" sizes="256x256" href="./favicon-256.png?v=1">
+  <link rel="shortcut icon" href="./favicon.png?v=1">
   <style>
     :root {
       --bg: #f5f5f7;
@@ -49,6 +50,14 @@
       padding: 16px 4px 8px;
     }
 
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -58,20 +67,30 @@
       font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: -0.01em;
-      margin-bottom: 20px;
     }
 
     .brand-mark {
       width: 28px;
       height: 28px;
       border-radius: 9px;
-      background: linear-gradient(135deg, #5b6cff, #7b8aff);
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 0 6px 18px rgba(91, 108, 255, 0.18);
+      background: rgba(255, 255, 255, 0.7);
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 14px;
       color: var(--accent);
       font-size: 0.9rem;
       font-weight: 700;
@@ -84,6 +103,7 @@
       line-height: 0.95;
       letter-spacing: -0.055em;
       font-weight: 750;
+      max-width: 10ch;
     }
 
     .sub {
@@ -116,6 +136,15 @@
       font-weight: 600;
       letter-spacing: -0.01em;
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .pill:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
     }
 
     .main-card {
@@ -130,9 +159,7 @@
     }
 
     @media (min-width: 720px) {
-      .main-card {
-        padding: 42px 44px;
-      }
+      .main-card { padding: 42px 44px; }
     }
 
     .section + .section {
@@ -152,6 +179,7 @@
     p {
       margin: 10px 0 0;
       font-size: 1rem;
+      color: var(--text);
     }
 
     ul {
@@ -161,22 +189,25 @@
 
     li {
       margin-top: 8px;
+      color: var(--text);
     }
 
-    a {
-      color: var(--accent);
-    }
+    a { color: var(--accent); }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <a class="brand" href="./index.html">
-        <span class="brand-mark"></span>
-        <span>Fiscalia</span>
-      </a>
+      <div class="brand-row">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">
+            <img src="./favicon-256.png" alt="Fiscalia icon" />
+          </span>
+          <span>Fiscalia</span>
+        </a>
+        <span class="eyebrow">Help</span>
+      </div>
 
-      <span class="eyebrow">Help</span>
       <h1>Support</h1>
       <p class="sub">
         Need help with Fiscalia? Use the contact details below for bugs, feedback,
@@ -193,7 +224,10 @@
     <main class="main-card">
       <section class="section">
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:angzeli0801@gmail.com">angzeli0801@gmail.com</a></p>
+        <p>
+          Email:
+          <a href="mailto:angzeli0801@gmail.com">angzeli0801@gmail.com</a>
+        </p>
       </section>
 
       <section class="section">
