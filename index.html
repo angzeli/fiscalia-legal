@@ -5,343 +5,328 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fiscalia</title>
   <style>
-  :root {
-    --bg: #f5f5f7;
-    --surface: rgba(255, 255, 255, 0.78);
-    --surface-strong: rgba(255, 255, 255, 0.92);
-    --text: #1d1d1f;
-    --muted: #6e6e73;
-    --line: rgba(0, 0, 0, 0.08);
-    --accent: #5b6cff;
-    --accent-soft: rgba(91, 108, 255, 0.10);
-    --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-    --radius-xl: 32px;
-    --radius-lg: 20px;
-    --radius-pill: 999px;
-    --max: 920px;
-  }
+    :root {
+      --bg: #f5f5f7;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: rgba(255, 255, 255, 0.92);
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(0, 0, 0, 0.08);
+      --accent: #5b6cff;
+      --accent-soft: rgba(91, 108, 255, 0.10);
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+      --radius-xl: 32px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --max: 920px;
+    }
 
-  * {
-    box-sizing: border-box;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
-  }
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
 
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-      "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background:
-      radial-gradient(circle at top center, rgba(91, 108, 255, 0.08), transparent 30%),
-      linear-gradient(to bottom, #fbfbfd 0%, #f5f5f7 100%);
-    color: var(--text);
-    line-height: 1.6;
-  }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top center, rgba(91, 108, 255, 0.08), transparent 30%),
+        linear-gradient(to bottom, #fbfbfd 0%, #f5f5f7 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-  .wrap {
-    width: min(var(--max), calc(100% - 32px));
-    margin: 0 auto;
-    padding: 40px 0 72px;
-  }
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 72px;
+    }
 
-  .hero {
-    padding: 16px 4px 8px;
-  }
+    .hero {
+      padding: 16px 4px 8px;
+    }
 
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--muted);
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin-bottom: 20px;
-  }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+    }
 
-  .brand-mark {
-    width: 28px;
-    height: 28px;
-    border-radius: 9px;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.68)),
-      linear-gradient(135deg, #5b6cff, #7b8aff);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.75),
-      0 6px 18px rgba(91, 108, 255, 0.18);
-  }
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.68)),
+        linear-gradient(135deg, #5b6cff, #7b8aff);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.75),
+        0 6px 18px rgba(91, 108, 255, 0.18);
+    }
 
-  h1 {
-    margin: 0;
-    font-size: clamp(2.8rem, 7vw, 5.2rem);
-    line-height: 0.95;
-    letter-spacing: -0.055em;
-    font-weight: 750;
-    max-width: 9ch;
-  }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
 
-  .sub {
-    margin: 18px 0 0;
-    max-width: 720px;
-    font-size: 1.08rem;
-    line-height: 1.65;
-    color: var(--muted);
-    letter-spacing: -0.01em;
-  }
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 750;
+      max-width: 10ch;
+    }
 
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 28px;
-  }
+    .sub {
+      margin: 18px 0 0;
+      max-width: 720px;
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: var(--muted);
+      letter-spacing: -0.01em;
+    }
 
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--text);
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    border-radius: var(--radius-pill);
-    padding: 11px 16px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
-    transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
 
-  .pill:hover {
-    transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
-  }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: var(--radius-pill);
+      padding: 11px 16px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
-  .main-card {
-    margin-top: 34px;
-    background: var(--surface);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    padding: 28px 24px;
-  }
+    .pill:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    }
 
-  @media (min-width: 720px) {
     .main-card {
-      padding: 42px 44px;
+      margin-top: 34px;
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 28px 24px;
     }
-  }
 
-  .section + .section {
-    margin-top: 36px;
-    padding-top: 36px;
-    border-top: 1px solid var(--line);
-  }
+    @media (min-width: 720px) {
+      .main-card {
+        padding: 42px 44px;
+      }
+    }
 
-  h2 {
-    margin: 0 0 10px;
-    font-size: 1.45rem;
-    line-height: 1.1;
-    letter-spacing: -0.035em;
-    font-weight: 680;
-  }
+    .section + .section {
+      margin-top: 36px;
+      padding-top: 36px;
+      border-top: 1px solid var(--line);
+    }
 
-  h3 {
-    margin: 24px 0 8px;
-    font-size: 1rem;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-    font-weight: 640;
-    color: var(--text);
-  }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      font-weight: 680;
+    }
 
-  p {
-    margin: 10px 0 0;
-    font-size: 1rem;
-    color: var(--text);
-  }
+    p {
+      margin: 10px 0 0;
+      font-size: 1rem;
+      color: var(--text);
+    }
 
-  .muted {
-    color: var(--muted);
-  }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
 
-  ul {
-    margin: 12px 0 0;
-    padding-left: 20px;
-  }
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-soft);
+      color: #4151d6;
+      border: 1px solid rgba(91, 108, 255, 0.10);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
 
-  li {
-    margin-top: 8px;
-    color: var(--text);
-  }
-
-  .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 14px;
-  }
-
-  .meta span {
-    display: inline-flex;
-    align-items: center;
-    min-height: 32px;
-    padding: 6px 12px;
-    border-radius: var(--radius-pill);
-    background: var(--accent-soft);
-    color: #4151d6;
-    border: 1px solid rgba(91, 108, 255, 0.10);
-    font-size: 0.92rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  a {
-    color: var(--accent);
-  }
-
-  .footer {
-    margin-top: 22px;
-    padding: 0 2px;
-    color: var(--muted);
-    font-size: 0.94rem;
-    letter-spacing: -0.01em;
-  }
-
-  .footer-card {
-    margin-top: 16px;
-    background: var(--surface-strong);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: var(--radius-lg);
-    padding: 18px 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035);
-  }
-
-  .footer-title {
-    font-weight: 640;
-    color: var(--text);
-  }
-
-  .footer-sub {
-    margin-top: 4px;
-    color: var(--muted);
-  }
-
-  .eyebrow {
-    display: inline-block;
-    margin-bottom: 14px;
-    color: var(--accent);
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 18px;
-  }
-
-  @media (min-width: 720px) {
     .grid {
-      grid-template-columns: repeat(3, 1fr);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
     }
-  }
 
-  .mini-card {
-    background: rgba(255,255,255,0.72);
-    border: 1px solid rgba(0,0,0,0.05);
-    border-radius: 18px;
-    padding: 16px 16px;
-  }
+    @media (min-width: 720px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
-  .mini-card-title {
-    font-size: 0.95rem;
-    font-weight: 640;
-    letter-spacing: -0.01em;
-    color: var(--text);
-  }
+    .mini-card {
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 18px;
+      padding: 16px 16px;
+    }
 
-  .mini-card-text {
-    margin-top: 6px;
-    font-size: 0.95rem;
-    color: var(--muted);
-  }
-</style>
+    .mini-card-title {
+      font-size: 0.95rem;
+      font-weight: 640;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .mini-card-text {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    a.inline {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.inline:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 22px;
+      padding: 0 2px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-card {
+      margin-top: 16px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035);
+    }
+
+    .footer-title {
+      font-weight: 640;
+      color: var(--text);
+    }
+
+    .footer-sub {
+      margin-top: 4px;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="hero">
-    <a class="brand" href="./index.html">
-      <span class="brand-mark"></span>
-      <span>Fiscalia</span>
-    </a>
+  <div class="wrap">
+    <header class="hero">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"></span>
+        <span>Fiscalia</span>
+      </a>
 
-    <span class="eyebrow">Local-first finance</span>
-    <h1>Legal, privacy, and support.</h1>
-    <p class="sub">
-      Fiscalia is a local-first spending tracker designed to keep your financial
-      data simple, private, and on your device.
-    </p>
-
-    <nav class="nav">
-      <a class="pill" href="./privacy.html">Privacy Policy</a>
-      <a class="pill" href="./terms.html">Terms of Use</a>
-      <a class="pill" href="./support.html">Support</a>
-    </nav>
-  </header>
-
-  <main class="main-card">
-    <section class="section">
-      <h2>About Fiscalia</h2>
-      <div class="meta">
-        <span>Local-only</span>
-        <span>No account required</span>
-        <span>No ads or tracking</span>
-      </div>
-      <p>
-        Fiscalia helps users record spending, review budgets, and track recurring
-        expenses directly on their iPhone.
+      <span class="eyebrow">Local-first finance</span>
+      <h1>Legal, privacy, and support.</h1>
+      <p class="sub">
+        Fiscalia is a local-first spending tracker designed to keep your financial
+        data simple, private, and on your device.
       </p>
-    </section>
 
-    <section class="section">
-      <h2>Explore</h2>
-      <div class="grid">
-        <div class="mini-card">
-          <div class="mini-card-title">Privacy Policy</div>
-          <div class="mini-card-text">How Fiscalia handles data and protects privacy.</div>
+      <nav class="nav">
+        <a class="pill" href="./privacy.html">Privacy Policy</a>
+        <a class="pill" href="./terms.html">Terms of Use</a>
+        <a class="pill" href="./support.html">Support</a>
+      </nav>
+    </header>
+
+    <main class="main-card">
+      <section class="section">
+        <h2>About Fiscalia</h2>
+        <div class="meta">
+          <span>Local-only</span>
+          <span>No account required</span>
+          <span>No ads or tracking</span>
         </div>
-        <div class="mini-card">
-          <div class="mini-card-title">Terms of Use</div>
-          <div class="mini-card-text">The terms that apply when using Fiscalia.</div>
+        <p>
+          Fiscalia helps users record spending, review budgets, and track recurring
+          expenses directly on their iPhone.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Explore</h2>
+        <div class="grid">
+          <div class="mini-card">
+            <div class="mini-card-title">Privacy Policy</div>
+            <div class="mini-card-text">How Fiscalia handles data and protects privacy.</div>
+            <p><a class="inline" href="./privacy.html">Read policy</a></p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-title">Terms of Use</div>
+            <div class="mini-card-text">The terms that apply when using Fiscalia.</div>
+            <p><a class="inline" href="./terms.html">Read terms</a></p>
+          </div>
+          <div class="mini-card">
+            <div class="mini-card-title">Support</div>
+            <div class="mini-card-text">Contact details for bugs, help, and feedback.</div>
+            <p><a class="inline" href="./support.html">Get support</a></p>
+          </div>
         </div>
-        <div class="mini-card">
-          <div class="mini-card-title">Support</div>
-          <div class="mini-card-text">Contact details for bugs, help, and feedback.</div>
-        </div>
+      </section>
+    </main>
+
+    <div class="footer">
+      <div class="footer-card">
+        <div class="footer-title">Fiscalia</div>
+        <div class="footer-sub">Built by Angze “Squiddy” Li</div>
       </div>
-    </section>
-  </main>
-
-  <div class="footer">
-    <div class="footer-card">
-      <div class="footer-title">Fiscalia</div>
-      <div class="footer-sub">Built by Angze “Squiddy” Li</div>
     </div>
   </div>
-</div>
 </body>
 </html>
