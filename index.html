@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-current-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fiscalia</title>
-  <link rel="icon" type="image/png" sizes="60x60" href="./favicon.png?v=1">
-  <link rel="icon" type="image/png" sizes="256x256" href="./favicon-256.png?v=1">
-  <link rel="shortcut icon" href="./favicon.png?v=1">
+  <link rel="icon" type="image/png" sizes="60x60" href="./favicon.png?v=2">
+  <link rel="icon" type="image/png" sizes="256x256" href="./favicon-256.png?v=2">
+  <link rel="shortcut icon" href="./favicon.png?v=2">
   <style>
     :root {
       --bg: #f5f5f7;
-      --surface: rgba(255, 255, 255, 0.78);
-      --surface-strong: rgba(255, 255, 255, 0.92);
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-strong: rgba(255, 255, 255, 0.94);
       --text: #1d1d1f;
       --muted: #6e6e73;
       --line: rgba(0, 0, 0, 0.08);
@@ -25,7 +25,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -43,12 +42,7 @@
       line-height: 1.6;
     }
 
-    .wrap {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-      padding: 40px 0 72px;
-    }
-
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; padding: 40px 0 72px; }
     .hero { padding: 16px 4px 8px; }
 
     .topbar {
@@ -87,7 +81,7 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 6px 18px rgba(91, 108, 255, 0.18);
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255,255,255,0.7);
       flex-shrink: 0;
     }
 
@@ -99,7 +93,6 @@
     }
 
     .eyebrow {
-      display: inline-block;
       color: var(--accent);
       font-size: 0.9rem;
       font-weight: 700;
@@ -114,7 +107,7 @@
       border-radius: 999px;
       background: rgba(255,255,255,0.72);
       border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
@@ -139,15 +132,16 @@
     h1 {
       margin: 0;
       font-size: clamp(2.8rem, 7vw, 5.2rem);
-      line-height: 0.95;
+      line-height: 0.93;
       letter-spacing: -0.055em;
       font-weight: 750;
-      max-width: 10ch;
+      max-width: 12ch;
     }
 
+    .title-line { display: block; }
     .sub {
-      margin: 18px 0 0;
-      max-width: 720px;
+      margin: 28px 0 0;
+      max-width: 760px;
       font-size: 1.08rem;
       line-height: 1.65;
       color: var(--muted);
@@ -167,14 +161,14 @@
       justify-content: center;
       text-decoration: none;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,0,0,0.06);
       border-radius: var(--radius-pill);
       padding: 11px 16px;
       font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: -0.01em;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
       transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -182,14 +176,14 @@
 
     .pill:hover {
       transform: translateY(-1px);
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
     }
 
     .main-card {
       margin-top: 34px;
       background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255,255,255,0.7);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
@@ -221,25 +215,36 @@
       color: var(--text);
     }
 
-    .meta {
+    .feature-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+      gap: 12px;
+      margin-top: 16px;
+      margin-bottom: 22px;
     }
 
-    .meta span {
+    .feature-pill {
       display: inline-flex;
       align-items: center;
-      min-height: 32px;
-      padding: 6px 12px;
+      min-height: 38px;
+      padding: 8px 16px;
       border-radius: var(--radius-pill);
       background: var(--accent-soft);
       color: #4151d6;
       border: 1px solid rgba(91, 108, 255, 0.10);
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .feature-pill .dot {
+      margin: 0 8px;
+      opacity: 0.7;
+    }
+
+    .about-text {
+      margin-top: 18px;
     }
 
     .grid {
@@ -261,16 +266,19 @@
     }
 
     .mini-card-title {
+      display: block;
       font-size: 0.95rem;
       font-weight: 640;
       letter-spacing: -0.01em;
       color: var(--text);
+      margin-bottom: 8px;
     }
 
     .mini-card-text {
-      margin-top: 6px;
+      display: block;
       font-size: 0.95rem;
       color: var(--muted);
+      line-height: 1.55;
     }
 
     a.inline {
@@ -291,23 +299,22 @@
     .footer-card {
       margin-top: 16px;
       background: var(--surface-strong);
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0,0,0,0.05);
       border-radius: var(--radius-lg);
       padding: 18px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.035);
     }
 
     .footer-title { font-weight: 640; color: var(--text); }
     .footer-sub { margin-top: 4px; color: var(--muted); }
 
-    [data-lang] { display: none; }
-    html[data-current-lang="en"] [data-lang="en"] { display: initial; }
-    html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"] { display: initial; }
-
-    html[data-current-lang="en"] .show-block-en,
-    html[data-current-lang="zh-Hant"] .show-block-zh {
-      display: block;
-    }
+    [data-lang] { display: none !important; }
+    html[data-current-lang="en"] [data-lang="en"].inline { display: inline !important; }
+    html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"].inline { display: inline !important; }
+    html[data-current-lang="en"] [data-lang="en"].inline-block { display: inline-block !important; }
+    html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"].inline-block { display: inline-block !important; }
+    html[data-current-lang="en"] [data-lang="en"].block { display: block !important; }
+    html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"].block { display: block !important; }
   </style>
 </head>
 <body>
@@ -321,8 +328,8 @@
             </span>
             <span>Fiscalia</span>
           </a>
-          <span class="eyebrow" data-lang="en">Local-first finance</span>
-          <span class="eyebrow" data-lang="zh-Hant">本機優先記帳</span>
+          <span class="eyebrow inline-block" data-lang="en">Local-first finance</span>
+          <span class="eyebrow inline-block" data-lang="zh-Hant">本機優先記帳</span>
         </div>
 
         <div class="lang-toggle" aria-label="Language switch">
@@ -331,89 +338,93 @@
         </div>
       </div>
 
-      <h1 data-lang="en">Legal, privacy, and support.</h1>
-      <h1 data-lang="zh-Hant">法律資訊、隱私與支援。</h1>
+      <h1 class="block" data-lang="en">
+        <span class="title-line">Legal, privacy,</span>
+        <span class="title-line">and support.</span>
+      </h1>
+      <h1 class="block" data-lang="zh-Hant">法律資訊、隱私與支援。</h1>
 
-      <p class="sub" data-lang="en">
+      <p class="sub block" data-lang="en">
         Fiscalia is a local-first spending tracker designed to keep your financial
         data simple, private, and on your device.
       </p>
-      <p class="sub" data-lang="zh-Hant">
+      <p class="sub block" data-lang="zh-Hant">
         Fiscalia 是一款本機優先的支出追蹤 App，致力於讓你的財務資料保持簡潔、私密，並只留在你的裝置上。
       </p>
 
       <nav class="nav">
         <a class="pill" href="./privacy.html">
-          <span data-lang="en">Privacy Policy</span>
-          <span data-lang="zh-Hant">隱私權政策</span>
+          <span class="inline" data-lang="en">Privacy Policy</span>
+          <span class="inline" data-lang="zh-Hant">隱私權政策</span>
         </a>
         <a class="pill" href="./terms.html">
-          <span data-lang="en">Terms of Use</span>
-          <span data-lang="zh-Hant">使用條款</span>
+          <span class="inline" data-lang="en">Terms of Use</span>
+          <span class="inline" data-lang="zh-Hant">使用條款</span>
         </a>
         <a class="pill" href="./support.html">
-          <span data-lang="en">Support</span>
-          <span data-lang="zh-Hant">支援</span>
+          <span class="inline" data-lang="en">Support</span>
+          <span class="inline" data-lang="zh-Hant">支援</span>
         </a>
       </nav>
     </header>
 
     <main class="main-card">
       <section class="section">
-        <h2 data-lang="en">About Fiscalia</h2>
-        <h2 data-lang="zh-Hant">關於 Fiscalia</h2>
+        <h2 class="block" data-lang="en">About Fiscalia</h2>
+        <h2 class="block" data-lang="zh-Hant">關於 Fiscalia</h2>
 
-        <div class="meta">
-          <span data-lang="en">Local-only</span>
-          <span data-lang="zh-Hant">僅限本機</span>
-
-          <span data-lang="en">No account required</span>
-          <span data-lang="zh-Hant">無需帳號</span>
-
-          <span data-lang="en">No ads or tracking</span>
-          <span data-lang="zh-Hant">無廣告、無追蹤</span>
+        <div class="feature-pills">
+          <span class="feature-pill">
+            <span>Local-only</span><span class="dot">·</span><span>僅限本機</span>
+          </span>
+          <span class="feature-pill">
+            <span>No account required</span><span class="dot">·</span><span>無需帳號</span>
+          </span>
+          <span class="feature-pill">
+            <span>No ads or tracking</span><span class="dot">·</span><span>無廣告、無追蹤</span>
+          </span>
         </div>
 
-        <p data-lang="en">
+        <p class="about-text block" data-lang="en">
           Fiscalia helps users record spending, review budgets, and track recurring
           expenses directly on their iPhone.
         </p>
-        <p data-lang="zh-Hant">
-          Fiscalia 幫助使用者在 iPhone 上記錄支出、查看預算，並追蹤 recurring expenses（定期支出）。
+        <p class="about-text block" data-lang="zh-Hant">
+          Fiscalia 幫助使用者在 iPhone 上記錄支出、查看預算，並追蹤定期支出。
         </p>
       </section>
 
       <section class="section">
-        <h2 data-lang="en">Explore</h2>
-        <h2 data-lang="zh-Hant">快速導覽</h2>
+        <h2 class="block" data-lang="en">Explore</h2>
+        <h2 class="block" data-lang="zh-Hant">快速導覽</h2>
 
         <div class="grid">
           <div class="mini-card">
-            <div class="mini-card-title" data-lang="en">Privacy Policy</div>
-            <div class="mini-card-title" data-lang="zh-Hant">隱私權政策</div>
+            <span class="mini-card-title block" data-lang="en">Privacy Policy</span>
+            <span class="mini-card-title block" data-lang="zh-Hant">隱私權政策</span>
 
-            <div class="mini-card-text" data-lang="en">How Fiscalia handles data and protects privacy.</div>
-            <div class="mini-card-text" data-lang="zh-Hant">了解 Fiscalia 如何處理資料與保護隱私。</div>
+            <span class="mini-card-text block" data-lang="en">How Fiscalia handles data and protects privacy.</span>
+            <span class="mini-card-text block" data-lang="zh-Hant">了解 Fiscalia 如何處理資料與保護隱私。</span>
 
             <p><a class="inline" href="./privacy.html" data-lang="en">Read policy</a><a class="inline" href="./privacy.html" data-lang="zh-Hant">查看政策</a></p>
           </div>
 
           <div class="mini-card">
-            <div class="mini-card-title" data-lang="en">Terms of Use</div>
-            <div class="mini-card-title" data-lang="zh-Hant">使用條款</div>
+            <span class="mini-card-title block" data-lang="en">Terms of Use</span>
+            <span class="mini-card-title block" data-lang="zh-Hant">使用條款</span>
 
-            <div class="mini-card-text" data-lang="en">The terms that apply when using Fiscalia.</div>
-            <div class="mini-card-text" data-lang="zh-Hant">使用 Fiscalia 時適用的條款。</div>
+            <span class="mini-card-text block" data-lang="en">The terms that apply when using Fiscalia.</span>
+            <span class="mini-card-text block" data-lang="zh-Hant">使用 Fiscalia 時適用的條款。</span>
 
             <p><a class="inline" href="./terms.html" data-lang="en">Read terms</a><a class="inline" href="./terms.html" data-lang="zh-Hant">查看條款</a></p>
           </div>
 
           <div class="mini-card">
-            <div class="mini-card-title" data-lang="en">Support</div>
-            <div class="mini-card-title" data-lang="zh-Hant">支援</div>
+            <span class="mini-card-title block" data-lang="en">Support</span>
+            <span class="mini-card-title block" data-lang="zh-Hant">支援</span>
 
-            <div class="mini-card-text" data-lang="en">Contact details for bugs, help, and feedback.</div>
-            <div class="mini-card-text" data-lang="zh-Hant">取得 bug 回報、協助與意見回饋的聯絡方式。</div>
+            <span class="mini-card-text block" data-lang="en">Contact details for bugs, help, and feedback.</span>
+            <span class="mini-card-text block" data-lang="zh-Hant">取得 bug 回報、協助與意見回饋的聯絡方式。</span>
 
             <p><a class="inline" href="./support.html" data-lang="en">Get support</a><a class="inline" href="./support.html" data-lang="zh-Hant">取得支援</a></p>
           </div>
@@ -424,8 +435,8 @@
     <div class="footer">
       <div class="footer-card">
         <div class="footer-title">Fiscalia</div>
-        <div class="footer-sub" data-lang="en">Built by Angze “Squiddy” Li</div>
-        <div class="footer-sub" data-lang="zh-Hant">由 Angze “Squiddy” Li 製作</div>
+        <div class="footer-sub block" data-lang="en">Built by Angze “Squiddy” Li</div>
+        <div class="footer-sub block" data-lang="zh-Hant">由 Angze “Squiddy” Li 製作</div>
       </div>
     </div>
   </div>
