@@ -9,10 +9,22 @@ This repository hosts the public legal and support pages for **Fiscalia** — a 
 - `terms.html` — Terms of Use 📄
 - `support.html` — Support page 💌
 
+## Assets 🎨
+
+- `favicon.png` — 60×60 site icon
+- `favicon-256.png` — 256×256 higher-resolution site icon
+
 ## Live site 🌐
+
 
 Visit the site here:  
 **https://angzeli.github.io/fiscalia-legal/**
+
+Direct pages:
+- **Home:** `https://angzeli.github.io/fiscalia-legal/`
+- **Privacy Policy:** `https://angzeli.github.io/fiscalia-legal/privacy.html`
+- **Terms of Use:** `https://angzeli.github.io/fiscalia-legal/terms.html`
+- **Support:** `https://angzeli.github.io/fiscalia-legal/support.html`
 
 ## About Fiscalia 💸
 
