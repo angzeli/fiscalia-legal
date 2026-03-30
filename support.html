@@ -32,7 +32,7 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        "PingFang TC", "Noto Sans TC", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
         radial-gradient(circle at top center, rgba(91, 108, 255, 0.08), transparent 30%),
         linear-gradient(to bottom, #fbfbfd 0%, #f5f5f7 100%);
@@ -40,14 +40,16 @@
       line-height: 1.6;
     }
 
-    .wrap {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-      padding: 40px 0 72px;
-    }
+    .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; padding: 40px 0 72px; }
+    .hero { padding: 16px 4px 8px; }
 
-    .hero {
-      padding: 16px 4px 8px;
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
     .brand-row {
@@ -55,7 +57,6 @@
       align-items: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
     }
 
     .brand {
@@ -78,16 +79,11 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 6px 18px rgba(91, 108, 255, 0.18);
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255,255,255,0.7);
       flex-shrink: 0;
     }
 
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .brand-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     .eyebrow {
       display: inline-block;
@@ -95,6 +91,36 @@
       font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: -0.01em;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: white;
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     h1 {
@@ -128,14 +154,14 @@
       justify-content: center;
       text-decoration: none;
       color: var(--text);
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,0,0,0.06);
       border-radius: var(--radius-pill);
       padding: 11px 16px;
       font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: -0.01em;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
       transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -143,14 +169,14 @@
 
     .pill:hover {
       transform: translateY(-1px);
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
     }
 
     .main-card {
       margin-top: 34px;
       background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255,255,255,0.7);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
@@ -182,73 +208,122 @@
       color: var(--text);
     }
 
-    ul {
-      margin: 12px 0 0;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-top: 8px;
-      color: var(--text);
-    }
-
+    ul { margin: 12px 0 0; padding-left: 20px; }
+    li { margin-top: 8px; color: var(--text); }
     a { color: var(--accent); }
+
+    [data-lang] { display: none; }
+    html[data-current-lang="en"] [data-lang="en"] { display: initial; }
+    html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"] { display: initial; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <div class="brand-row">
-        <a class="brand" href="./index.html">
-          <span class="brand-mark">
-            <img src="./favicon-256.png" alt="Fiscalia icon" />
-          </span>
-          <span>Fiscalia</span>
-        </a>
-        <span class="eyebrow">Help</span>
+      <div class="topbar">
+        <div class="brand-row">
+          <a class="brand" href="./index.html">
+            <span class="brand-mark">
+              <img src="./favicon-256.png" alt="Fiscalia icon" />
+            </span>
+            <span>Fiscalia</span>
+          </a>
+          <span class="eyebrow" data-lang="en">Help</span>
+          <span class="eyebrow" data-lang="zh-Hant">支援</span>
+        </div>
+
+        <div class="lang-toggle" aria-label="Language switch">
+          <button class="lang-btn" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="zh-Hant">繁中</button>
+        </div>
       </div>
 
-      <h1>Support</h1>
-      <p class="sub">
+      <h1 data-lang="en">Support</h1>
+      <h1 data-lang="zh-Hant">支援</h1>
+
+      <p class="sub" data-lang="en">
         Need help with Fiscalia? Use the contact details below for bugs, feedback,
         feature suggestions, or support questions.
       </p>
+      <p class="sub" data-lang="zh-Hant">
+        如果你需要 Fiscalia 的協助，請使用以下聯絡方式回報 bug、提供意見、提出功能建議，或詢問支援問題。
+      </p>
 
       <nav class="nav">
-        <a class="pill" href="./index.html">Home</a>
-        <a class="pill" href="./privacy.html">Privacy Policy</a>
-        <a class="pill" href="./terms.html">Terms of Use</a>
+        <a class="pill" href="./index.html"><span data-lang="en">Home</span><span data-lang="zh-Hant">首頁</span></a>
+        <a class="pill" href="./privacy.html"><span data-lang="en">Privacy Policy</span><span data-lang="zh-Hant">隱私權政策</span></a>
+        <a class="pill" href="./terms.html"><span data-lang="en">Terms of Use</span><span data-lang="zh-Hant">使用條款</span></a>
       </nav>
     </header>
 
     <main class="main-card">
       <section class="section">
-        <h2>Contact</h2>
-        <p>
+        <h2 data-lang="en">Contact</h2>
+        <h2 data-lang="zh-Hant">聯絡方式</h2>
+
+        <p data-lang="en">
           Email:
+          <a href="mailto:angzeli0801@gmail.com">angzeli0801@gmail.com</a>
+        </p>
+        <p data-lang="zh-Hant">
+          電子郵件：
           <a href="mailto:angzeli0801@gmail.com">angzeli0801@gmail.com</a>
         </p>
       </section>
 
       <section class="section">
-        <h2>What you can contact support about</h2>
-        <ul>
+        <h2 data-lang="en">What you can contact support about</h2>
+        <h2 data-lang="zh-Hant">你可以聯絡支援的事項</h2>
+
+        <ul data-lang="en">
           <li>Bug reports or unexpected behaviour</li>
           <li>Feature suggestions and usability feedback</li>
           <li>Questions about app functionality</li>
           <li>Privacy-related questions</li>
         </ul>
+
+        <ul data-lang="zh-Hant">
+          <li>Bug 回報或非預期行為</li>
+          <li>功能建議與使用體驗回饋</li>
+          <li>關於 App 功能的問題</li>
+          <li>與隱私相關的疑問</li>
+        </ul>
       </section>
 
       <section class="section">
-        <h2>About Fiscalia</h2>
-        <p>
+        <h2 data-lang="en">About Fiscalia</h2>
+        <h2 data-lang="zh-Hant">關於 Fiscalia</h2>
+
+        <p data-lang="en">
           Fiscalia is a local-first personal finance app for tracking spending,
           budgets, and recurring expenses. No account is required, and all user
           data is stored locally on the device.
         </p>
+        <p data-lang="zh-Hant">
+          Fiscalia 是一款本機優先的個人理財 App，用於追蹤支出、管理預算與定期支出。無需帳號，所有使用者資料皆儲存在裝置本機。
+        </p>
       </section>
     </main>
   </div>
+
+  <script>
+    const LANG_KEY = "fiscalia-language";
+    const defaultLang = localStorage.getItem(LANG_KEY) || "en";
+
+    function applyLanguage(lang) {
+      document.documentElement.setAttribute("data-current-lang", lang);
+      document.documentElement.setAttribute("lang", lang === "zh-Hant" ? "zh-Hant" : "en");
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.setLang === lang);
+      });
+      localStorage.setItem(LANG_KEY, lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => applyLanguage(btn.dataset.setLang));
+    });
+
+    applyLanguage(defaultLang);
+  </script>
 </body>
 </html>
