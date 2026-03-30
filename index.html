@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fiscalia</title>
-  <link rel="icon" type="image/png" sizes="60x60" href="./favicon.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="./favicon-256.png">
+  <link rel="icon" type="image/png" sizes="60x60" href="./favicon.png?v=1">
+  <link rel="icon" type="image/png" sizes="256x256" href="./favicon-256.png?v=1">
+  <link rel="shortcut icon" href="./favicon.png?v=1">
   <style>
     :root {
       --bg: #f5f5f7;
@@ -54,6 +55,14 @@
       padding: 16px 4px 8px;
     }
 
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -63,24 +72,30 @@
       font-size: 0.95rem;
       font-weight: 600;
       letter-spacing: -0.01em;
-      margin-bottom: 20px;
     }
 
     .brand-mark {
       width: 28px;
       height: 28px;
       border-radius: 9px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.68)),
-        linear-gradient(135deg, #5b6cff, #7b8aff);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.75),
-        0 6px 18px rgba(91, 108, 255, 0.18);
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(91, 108, 255, 0.18);
+      background: rgba(255, 255, 255, 0.7);
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 14px;
       color: var(--accent);
       font-size: 0.9rem;
       font-weight: 700;
@@ -268,12 +283,16 @@
 <body>
   <div class="wrap">
     <header class="hero">
-      <a class="brand" href="./index.html">
-        <span class="brand-mark"></span>
-        <span>Fiscalia</span>
-      </a>
+      <div class="brand-row">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">
+            <img src="./favicon-256.png" alt="Fiscalia icon" />
+          </span>
+          <span>Fiscalia</span>
+        </a>
+        <span class="eyebrow">Local-first finance</span>
+      </div>
 
-      <span class="eyebrow">Local-first finance</span>
       <h1>Legal, privacy, and support.</h1>
       <p class="sub">
         Fiscalia is a local-first spending tracker designed to keep your financial
