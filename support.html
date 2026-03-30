@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiscalia Support</title>
+  <style>
+    :root {
+      --bg: #f6f6f8;
+      --card: rgba(255, 255, 255, 0.82);
+      --text: #161618;
+      --muted: #6e6e73;
+      --line: rgba(0, 0, 0, 0.08);
+      --accent: #ff2d55;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --radius: 28px;
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 45, 85, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 159, 10, 0.06), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 40px auto 72px;
+    }
+
+    .hero {
+      padding: 24px 4px 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+      margin-bottom: 18px;
+    }
+
+    .brand-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff2d55, #ff6b8a);
+      box-shadow: 0 0 0 6px rgba(255, 45, 85, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin: 0 0 16px;
+      font-weight: 800;
+    }
+
+    .sub {
+      max-width: 680px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px 26px;
+      margin-top: 24px;
+    }
+
+    @media (min-width: 720px) {
+      .card { padding: 40px 42px; }
+    }
+
+    .section + .section {
+      margin-top: 36px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+      font-weight: 750;
+    }
+
+    p { margin: 10px 0 0; }
+
+    ul {
+      margin: 12px 0 0 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .meta span {
+      background: rgba(0, 0, 0, 0.035);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 999px;
+      padding: 7px 12px;
+    }
+
+    a { color: var(--accent); }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-card {
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 22px;
+      padding: 18px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>Fiscalia</span>
+      </div>
+      <h1>Support</h1>
+      <p class="sub">
+        Need help with Fiscalia? Get in touch for bug reports, feature suggestions,
+        support questions, or privacy-related enquiries.
+      </p>
+      <nav class="nav">
+        <a class="pill" href="./index.html">Legal Home</a>
+        <a class="pill" href="./privacy.html">Privacy Policy</a>
+        <a class="pill" href="./terms.html">Terms of Use</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <section class="section">
+        <h2>Contact</h2>
+        <div class="meta">
+          <span>Support email</span>
+          <span>Fiscalia</span>
+          <span>Local-first app</span>
+        </div>
+        <p>
+          For support, please email:
+          <a href="mailto:angzeli0801@gmail.com">angzeli0801@gmail.com</a>
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>What you can contact me about</h2>
+        <ul>
+          <li>Bug reports or unexpected behaviour</li>
+          <li>Feature suggestions and usability feedback</li>
+          <li>Questions about app functionality</li>
+          <li>Privacy-related questions</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>About Fiscalia</h2>
+        <p>
+          Fiscalia is a local-first personal finance app for tracking spending,
+          budgets, and recurring expenses. No account is required, and user data
+          is stored locally on the device.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-card">
+        <strong>Fiscalia</strong><br />
+        Built by Angze “Squiddy” Li
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
