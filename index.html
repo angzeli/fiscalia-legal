@@ -24,9 +24,7 @@
       --max: 920px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       -webkit-font-smoothing: antialiased;
@@ -37,7 +35,7 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        "PingFang TC", "Noto Sans TC", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
         radial-gradient(circle at top center, rgba(91, 108, 255, 0.08), transparent 30%),
         linear-gradient(to bottom, #fbfbfd 0%, #f5f5f7 100%);
@@ -51,8 +49,15 @@
       padding: 40px 0 72px;
     }
 
-    .hero {
-      padding: 16px 4px 8px;
+    .hero { padding: 16px 4px 8px; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
     .brand-row {
@@ -60,7 +65,6 @@
       align-items: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
     }
 
     .brand {
@@ -100,6 +104,36 @@
       font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: -0.01em;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .lang-btn.active {
+      background: white;
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     h1 {
@@ -164,9 +198,7 @@
     }
 
     @media (min-width: 720px) {
-      .main-card {
-        padding: 42px 44px;
-      }
+      .main-card { padding: 42px 44px; }
     }
 
     .section + .section {
@@ -218,16 +250,14 @@
     }
 
     @media (min-width: 720px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     .mini-card {
       background: rgba(255,255,255,0.72);
       border: 1px solid rgba(0,0,0,0.05);
       border-radius: 18px;
-      padding: 16px 16px;
+      padding: 16px;
     }
 
     .mini-card-title {
@@ -248,9 +278,7 @@
       text-decoration: none;
     }
 
-    a.inline:hover {
-      text-decoration: underline;
-    }
+    a.inline:hover { text-decoration: underline; }
 
     .footer {
       margin-top: 22px;
@@ -265,78 +293,129 @@
       background: var(--surface-strong);
       border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: var(--radius-lg);
-      padding: 18px 18px;
+      padding: 18px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035);
     }
 
-    .footer-title {
-      font-weight: 640;
-      color: var(--text);
-    }
+    .footer-title { font-weight: 640; color: var(--text); }
+    .footer-sub { margin-top: 4px; color: var(--muted); }
 
-    .footer-sub {
-      margin-top: 4px;
-      color: var(--muted);
+    [data-lang] { display: none; }
+    html[data-current-lang="en"] [data-lang="en"] { display: initial; }
+    html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"] { display: initial; }
+
+    html[data-current-lang="en"] .show-block-en,
+    html[data-current-lang="zh-Hant"] .show-block-zh {
+      display: block;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
-      <div class="brand-row">
-        <a class="brand" href="./index.html">
-          <span class="brand-mark">
-            <img src="./favicon-256.png" alt="Fiscalia icon" />
-          </span>
-          <span>Fiscalia</span>
-        </a>
-        <span class="eyebrow">Local-first finance</span>
+      <div class="topbar">
+        <div class="brand-row">
+          <a class="brand" href="./index.html">
+            <span class="brand-mark">
+              <img src="./favicon-256.png" alt="Fiscalia icon" />
+            </span>
+            <span>Fiscalia</span>
+          </a>
+          <span class="eyebrow" data-lang="en">Local-first finance</span>
+          <span class="eyebrow" data-lang="zh-Hant">本機優先記帳</span>
+        </div>
+
+        <div class="lang-toggle" aria-label="Language switch">
+          <button class="lang-btn" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="zh-Hant">繁中</button>
+        </div>
       </div>
 
-      <h1>Legal, privacy, and support.</h1>
-      <p class="sub">
+      <h1 data-lang="en">Legal, privacy, and support.</h1>
+      <h1 data-lang="zh-Hant">法律資訊、隱私與支援。</h1>
+
+      <p class="sub" data-lang="en">
         Fiscalia is a local-first spending tracker designed to keep your financial
         data simple, private, and on your device.
       </p>
+      <p class="sub" data-lang="zh-Hant">
+        Fiscalia 是一款本機優先的支出追蹤 App，致力於讓你的財務資料保持簡潔、私密，並只留在你的裝置上。
+      </p>
 
       <nav class="nav">
-        <a class="pill" href="./privacy.html">Privacy Policy</a>
-        <a class="pill" href="./terms.html">Terms of Use</a>
-        <a class="pill" href="./support.html">Support</a>
+        <a class="pill" href="./privacy.html">
+          <span data-lang="en">Privacy Policy</span>
+          <span data-lang="zh-Hant">隱私權政策</span>
+        </a>
+        <a class="pill" href="./terms.html">
+          <span data-lang="en">Terms of Use</span>
+          <span data-lang="zh-Hant">使用條款</span>
+        </a>
+        <a class="pill" href="./support.html">
+          <span data-lang="en">Support</span>
+          <span data-lang="zh-Hant">支援</span>
+        </a>
       </nav>
     </header>
 
     <main class="main-card">
       <section class="section">
-        <h2>About Fiscalia</h2>
+        <h2 data-lang="en">About Fiscalia</h2>
+        <h2 data-lang="zh-Hant">關於 Fiscalia</h2>
+
         <div class="meta">
-          <span>Local-only</span>
-          <span>No account required</span>
-          <span>No ads or tracking</span>
+          <span data-lang="en">Local-only</span>
+          <span data-lang="zh-Hant">僅限本機</span>
+
+          <span data-lang="en">No account required</span>
+          <span data-lang="zh-Hant">無需帳號</span>
+
+          <span data-lang="en">No ads or tracking</span>
+          <span data-lang="zh-Hant">無廣告、無追蹤</span>
         </div>
-        <p>
+
+        <p data-lang="en">
           Fiscalia helps users record spending, review budgets, and track recurring
           expenses directly on their iPhone.
+        </p>
+        <p data-lang="zh-Hant">
+          Fiscalia 幫助使用者在 iPhone 上記錄支出、查看預算，並追蹤 recurring expenses（定期支出）。
         </p>
       </section>
 
       <section class="section">
-        <h2>Explore</h2>
+        <h2 data-lang="en">Explore</h2>
+        <h2 data-lang="zh-Hant">快速導覽</h2>
+
         <div class="grid">
           <div class="mini-card">
-            <div class="mini-card-title">Privacy Policy</div>
-            <div class="mini-card-text">How Fiscalia handles data and protects privacy.</div>
-            <p><a class="inline" href="./privacy.html">Read policy</a></p>
+            <div class="mini-card-title" data-lang="en">Privacy Policy</div>
+            <div class="mini-card-title" data-lang="zh-Hant">隱私權政策</div>
+
+            <div class="mini-card-text" data-lang="en">How Fiscalia handles data and protects privacy.</div>
+            <div class="mini-card-text" data-lang="zh-Hant">了解 Fiscalia 如何處理資料與保護隱私。</div>
+
+            <p><a class="inline" href="./privacy.html" data-lang="en">Read policy</a><a class="inline" href="./privacy.html" data-lang="zh-Hant">查看政策</a></p>
           </div>
+
           <div class="mini-card">
-            <div class="mini-card-title">Terms of Use</div>
-            <div class="mini-card-text">The terms that apply when using Fiscalia.</div>
-            <p><a class="inline" href="./terms.html">Read terms</a></p>
+            <div class="mini-card-title" data-lang="en">Terms of Use</div>
+            <div class="mini-card-title" data-lang="zh-Hant">使用條款</div>
+
+            <div class="mini-card-text" data-lang="en">The terms that apply when using Fiscalia.</div>
+            <div class="mini-card-text" data-lang="zh-Hant">使用 Fiscalia 時適用的條款。</div>
+
+            <p><a class="inline" href="./terms.html" data-lang="en">Read terms</a><a class="inline" href="./terms.html" data-lang="zh-Hant">查看條款</a></p>
           </div>
+
           <div class="mini-card">
-            <div class="mini-card-title">Support</div>
-            <div class="mini-card-text">Contact details for bugs, help, and feedback.</div>
-            <p><a class="inline" href="./support.html">Get support</a></p>
+            <div class="mini-card-title" data-lang="en">Support</div>
+            <div class="mini-card-title" data-lang="zh-Hant">支援</div>
+
+            <div class="mini-card-text" data-lang="en">Contact details for bugs, help, and feedback.</div>
+            <div class="mini-card-text" data-lang="zh-Hant">取得 bug 回報、協助與意見回饋的聯絡方式。</div>
+
+            <p><a class="inline" href="./support.html" data-lang="en">Get support</a><a class="inline" href="./support.html" data-lang="zh-Hant">取得支援</a></p>
           </div>
         </div>
       </section>
@@ -345,9 +424,30 @@
     <div class="footer">
       <div class="footer-card">
         <div class="footer-title">Fiscalia</div>
-        <div class="footer-sub">Built by Angze “Squiddy” Li</div>
+        <div class="footer-sub" data-lang="en">Built by Angze “Squiddy” Li</div>
+        <div class="footer-sub" data-lang="zh-Hant">由 Angze “Squiddy” Li 製作</div>
       </div>
     </div>
   </div>
+
+  <script>
+    const LANG_KEY = "fiscalia-language";
+    const defaultLang = localStorage.getItem(LANG_KEY) || "en";
+
+    function applyLanguage(lang) {
+      document.documentElement.setAttribute("data-current-lang", lang);
+      document.documentElement.setAttribute("lang", lang === "zh-Hant" ? "zh-Hant" : "en");
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.setLang === lang);
+      });
+      localStorage.setItem(LANG_KEY, lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => applyLanguage(btn.dataset.setLang));
+    });
+
+    applyLanguage(defaultLang);
+  </script>
 </body>
 </html>
