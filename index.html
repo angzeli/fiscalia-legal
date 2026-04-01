@@ -155,38 +155,6 @@
       letter-spacing: -0.01em;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: var(--text);
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(0,0,0,0.06);
-      border-radius: var(--radius-pill);
-      padding: 11px 16px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
-      transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .pill:hover {
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.92);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-    }
-
     .main-card {
       margin-top: 34px;
       background: var(--surface);
@@ -243,11 +211,6 @@
       font-weight: 600;
       letter-spacing: -0.01em;
       white-space: nowrap;
-    }
-
-    .feature-pill .dot {
-      margin: 0 8px;
-      opacity: 0.7;
     }
 
     .about-text {
@@ -326,6 +289,8 @@
     html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"].inline-block { display: inline-block !important; }
     html[data-current-lang="en"] [data-lang="en"].block { display: block !important; }
     html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"].block { display: block !important; }
+    html[data-current-lang="en"] [data-lang="en"].inline-flex { display: inline-flex !important; }
+    html[data-current-lang="zh-Hant"] [data-lang="zh-Hant"].inline-flex { display: inline-flex !important; }
   </style>
 </head>
 <body>
@@ -362,21 +327,6 @@
       <p class="sub block" data-lang="zh-Hant">
         Fiscalia 是一款本機優先的支出追蹤 App，致力於讓你的財務資料保持簡潔、私密，並只留在你的裝置上。
       </p>
-
-      <nav class="nav">
-        <a class="pill" href="./privacy.html">
-          <span class="inline" data-lang="en">Privacy Policy</span>
-          <span class="inline" data-lang="zh-Hant">隱私權政策</span>
-        </a>
-        <a class="pill" href="./terms.html">
-          <span class="inline" data-lang="en">Terms of Use</span>
-          <span class="inline" data-lang="zh-Hant">使用條款</span>
-        </a>
-        <a class="pill" href="./support.html">
-          <span class="inline" data-lang="en">Support</span>
-          <span class="inline" data-lang="zh-Hant">支援</span>
-        </a>
-      </nav>
     </header>
 
     <main class="main-card">
@@ -385,15 +335,14 @@
         <h2 class="block" data-lang="zh-Hant">關於 Fiscalia</h2>
 
         <div class="feature-pills">
-          <span class="feature-pill">
-            <span>Local-only</span><span class="dot">·</span><span>僅限本機</span>
-          </span>
-          <span class="feature-pill">
-            <span>No account required</span><span class="dot">·</span><span>無需帳號</span>
-          </span>
-          <span class="feature-pill">
-            <span>No ads or tracking</span><span class="dot">·</span><span>無廣告、無追蹤</span>
-          </span>
+          <span class="feature-pill inline-flex" data-lang="en">Local-only</span>
+          <span class="feature-pill inline-flex" data-lang="zh-Hant">僅限本機</span>
+
+          <span class="feature-pill inline-flex" data-lang="en">No account required</span>
+          <span class="feature-pill inline-flex" data-lang="zh-Hant">無需帳號</span>
+
+          <span class="feature-pill inline-flex" data-lang="en">No ads or tracking</span>
+          <span class="feature-pill inline-flex" data-lang="zh-Hant">無廣告、無追蹤</span>
         </div>
 
         <p class="about-text block" data-lang="en">
@@ -445,8 +394,8 @@
 
     <div class="footer">
       <div class="footer-card">
-        <div class="footer-credit block" data-lang="en">Built by Angze “Squiddy” Li</div>
-        <div class="footer-credit block" data-lang="zh-Hant">由 Angze “Squiddy” Li 製作</div>
+        <div class="footer-credit block" data-lang="en">Developed by Angze "Squiddy" Li</div>
+        <div class="footer-credit block" data-lang="zh-Hant">由 Angze "Squiddy" Li 開發</div>
       </div>
     </div>
   </div>
